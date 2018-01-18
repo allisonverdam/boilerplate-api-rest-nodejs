@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+
+</head>
+
+<body class="container">
+
+  <header>
+
+  </header>
+
+  <main>
+    <div class="home">
+      <h1>Available Endpoints</h1>
+
+      <style type="text/css">
+        .tg {
+          border-collapse: collapse;
+          border-spacing: 0;
+          border-color: #aabcfe;
+        }
+
+        .tg td {
+          font-family: Arial, sans-serif;
+          font-size: 14px;
+          padding: 10px 5px;
+          border-style: solid;
+          border-width: 1px;
+          overflow: hidden;
+          word-break: normal;
+          border-color: #aabcfe;
+          color: #669;
+          background-color: #e8edff;
+        }
+
+        .tg th {
+          font-family: Arial, sans-serif;
+          font-size: 14px;
+          font-weight: normal;
+          padding: 10px 5px;
+          border-style: solid;
+          border-width: 1px;
+          overflow: hidden;
+          word-break: normal;
+          border-color: #aabcfe;
+          color: #039;
+          background-color: #b9c9fe;
+        }
+
+        .tg .tg-3j7z {
+          background-color: #efefef;
+          color: #fe0000;
+          vertical-align: top;
+        }
+
+        .tg .tg-lpra {
+          background-color: #656565;
+          color: #fe0000;
+          text-align: center;
+          vertical-align: top
+        }
+
+        .tg .tg-4na0 {
+          background-color: #656565;
+          color: #fe0000;
+          vertical-align: top
+        }
+
+        .tg .tg-timq {
+          background-color: #efefef;
+          color: #000000;
+          vertical-align: top
+        }
+
+        table {
+          margin: 0 auto;
+        }
+
+        .home {
+          text-align: center;
+        }
+      </style>
+      <table class="tg">
+        <tr>
+          <th class="tg-lpra"><br></th>
+          <th class="tg-4na0">Path</th>
+          <!-- <th class="tg-4na0">Path</th> -->
+        </tr>
+        <% 
+            for (var key in routes) {
+      if (routes.hasOwnProperty(key)) {
+			var val = routes[key];
+			if(val.route)
+			{
+        val = val.route; 
+        if(typeof val.path == 'string'){
+        if(val.stack[0])
+          val.method = val.stack[0].method; 
+        else
+          val.method = '';    
+        %>
+          <tr>
+            <td class="tg-3j7z">
+              <%= val.method %>
+            </td>
+            <td class="tg-timq">
+              <%= val.path %>
+            </td>
+            <!-- <td class="tg-timq">
+              <a href="<%= val.path %>">
+                <%= val.path %>
+              </a>
+            </td> -->
+          </tr>
+
+          <% }}}}; %>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+
+  </footer>
+
+</body>
+
+</html>
